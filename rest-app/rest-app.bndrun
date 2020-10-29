@@ -1,0 +1,38 @@
+index: target/index.xml;name="rest-app"
+
+-standalone: ${index}
+
+-runrequires: \
+    osgi.identity;filter:='(osgi.identity=io.github.cdgeass.rest-service)', \
+    osgi.identity;filter:='(osgi.identity=org.apache.johnzon.core)', \
+    osgi.identity;filter:='(osgi.identity=org.h2)', \
+    osgi.identity;filter:='(osgi.identity=io.github.cdgeass.rest-app)'
+-runfw: org.eclipse.osgi
+-runee: JavaSE-1.8
+
+-resolve.effective: active
+-runbundles: \
+	ch.qos.logback.classic;version='[1.2.3,1.2.4)',\
+	ch.qos.logback.core;version='[1.2.3,1.2.4)',\
+	io.github.cdgeass.dao-api;version='[1.0.0,1.0.1)',\
+	io.github.cdgeass.dao-impl;version='[1.0.0,1.0.1)',\
+	io.github.cdgeass.rest-app;version='[1.0.0,1.0.1)',\
+	io.github.cdgeass.rest-service;version='[1.0.0,1.0.1)',\
+	org.apache.aries.javax.jax.rs-api;version='[1.0.0,1.0.1)',\
+	org.apache.aries.jax.rs.whiteboard;version='[1.0.1,1.0.2)',\
+	org.apache.felix.configadmin;version='[1.9.8,1.9.9)',\
+	org.apache.felix.configurator;version='[1.0.6,1.0.7)',\
+	org.apache.felix.http.jetty;version='[4.0.6,4.0.7)',\
+	org.apache.felix.http.servlet-api;version='[1.1.2,1.1.3)',\
+	org.apache.felix.scr;version='[2.1.10,2.1.11)',\
+	org.apache.johnzon.core;version='[1.1.0,1.1.1)',\
+	org.apache.servicemix.specs.annotation-api-1.3;version='[1.3.0,1.3.1)',\
+	org.apache.servicemix.specs.json-api-1.1;version='[2.9.0,2.9.1)',\
+	org.h2;version='[1.4.196,1.4.197)',\
+	org.osgi.service.jaxrs;version='[1.0.0,1.0.1)',\
+	org.osgi.util.converter;version='[1.0.0,1.0.1)',\
+	org.osgi.util.function;version='[1.1.0,1.1.1)',\
+	org.osgi.util.promise;version='[1.1.0,1.1.1)',\
+	slf4j.api;version='[1.7.25,1.7.26)',\
+	tx-control-provider-jdbc-xa;version='[1.0.0,1.0.1)',\
+	tx-control-service-xa;version='[1.0.0,1.0.1)'
